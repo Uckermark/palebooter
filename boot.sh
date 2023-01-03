@@ -1,5 +1,10 @@
 set -e
-bin="$(pwd)"/bin/"$(uname)"/"$(uname -m)"
+os=$(uname)
+if [ "$os" = "Linux" ]; then
+    bin="$(pwd)"/bin/"$os"/"$(uname -m)"
+else
+    bin="$(pwd)"/bin/"$os"
+fi
 boot="$(pwd)"/boot
 
 echo "[*] Pwning device..."
