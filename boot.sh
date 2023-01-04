@@ -15,12 +15,11 @@ fi
 boot="$(pwd)"/boot
 
 echo "[*] Pwning device..."
-"$bin"/gaster pwn 2&>1 "$out" 
-"$bin"/gaster reset 2&>1 "$out"
+"$bin"/gaster pwn &> "$out" 
+"$bin"/gaster reset &> "$out"
 
 echo "[*] Booting device..."
-"$bin"/irecovery -f "$boot"/iBSS.img4 2&>1 "$out"
-"$bin"/irecovery -f "$boot"/ibot.img4 2&>1 "$out"
+"$bin"/irecovery -f "$boot"/iBSS.img4 &> "$out"
+"$bin"/irecovery -f "$boot"/ibot.img4 &> "$out"
 
-echo "[*] Done!"
-echo "    The device should now boot to iOS"
+echo "[*] Done! The device will now boot to iOS"
